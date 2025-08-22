@@ -133,3 +133,67 @@ canvas {
   transition: transform 0.2s ease, opacity 0.3s ease;
   opacity: 1;
 }
+
+
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    aspect-ratio: 4/3; 
+  }
+
+  video, canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #sign {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .game {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .game h3 {
+    font-size: 24px;
+  }
+
+  .game p {
+    font-size: 18px;
+  }
+
+  #result {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sign {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .game h3 {
+    font-size: 20px;
+  }
+
+  .game p {
+    font-size: 16px;
+  }
+
+  #result {
+    font-size: 20px;
+  }
+}
