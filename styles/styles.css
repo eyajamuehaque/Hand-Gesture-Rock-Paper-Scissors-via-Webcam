@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Video container */
+.container {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transform: scaleX(-1);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+#sign {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.9);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+#sign.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+.game {
+  width: 260px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.game.active {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.game.active::before {
+  animation: shimmer 1s forwards;
+}
+
+@keyframes shimmer {
+  0% { left: -75%; }
+  100% { left: 100%; }
+}
+
+.game h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.game p {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #555;
+}
+
+#computer-choice {
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+#result {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  opacity: 1;
+}
